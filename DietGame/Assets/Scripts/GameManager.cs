@@ -65,7 +65,9 @@ public class GameManager : MonoBehaviour
             //removeFoods(リスト)へ追加
             Debug.Log("tuika");
             FoodID food = hit.collider.GetComponent<FoodID>();
-            removeFoods.Add(food);
+
+            //removeFoods.Add(food);
+            NotList(food);
 
             dragging = true;
         }
@@ -80,6 +82,8 @@ public class GameManager : MonoBehaviour
         if(hit && hit.collider.GetComponent<FoodID>())
         {
             FoodID food = hit.collider.GetComponent<FoodID>();
+
+            NotList(food);
         }
     }
 
@@ -91,7 +95,7 @@ public class GameManager : MonoBehaviour
 
 
     //リストにない場合表示する
-    void NotList()
+    void NotList(FoodID food)
     {
         if(removeFoods.Contains(food) == false)
         {

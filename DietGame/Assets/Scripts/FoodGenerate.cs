@@ -39,4 +39,10 @@ public class FoodGenerate : MonoBehaviour
         }
     }
 
+    //ランダムな食べ物を取得する
+    public void RandomFoods()
+    {
+        int foodID = Random.Range(0,foodSprites.Length);
+        food.GetComponent<SpriteRenderer>().sprite = foodSprites[foodID];
+    }
 }

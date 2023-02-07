@@ -35,6 +35,8 @@ public class FoodGenerate : MonoBehaviour
             Vector3 posY = new Vector3(Random.Range(-1.5f,1.5f),10f,-10f);
             food = Instantiate(foodPrefab, posY, Quaternion.identity);
 
+            RandomFoods();
+            
             yield return new WaitForSeconds(0.4f);
         }
     }

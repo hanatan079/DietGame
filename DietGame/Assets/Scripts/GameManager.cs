@@ -8,6 +8,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     FoodGenerate foodGenerate;
 
+    //押している時引数
+    [SerializeField]
+    bool dragging;
+    
+
+
 
     void Start()
     {
@@ -16,9 +22,28 @@ public class GameManager : MonoBehaviour
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         
+    }
+
+    //マウスを検知
+    void Mousedetection()
+    {
+        //押した時
+        if(Input.GetMouseButtonDown(0))
+        {
+
+        }
+        //押している時
+        else if(dragging)
+        {
+
+        }
+        //離した時
+        else if(Input.GetMouseButtonUp(0))
+        {
+
+        }
     }
 }

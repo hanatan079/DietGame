@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
         //押している時
         else if(dragging)
         {
-
+            NowDragging();
         }
         //離した時
         else if(Input.GetMouseButtonUp(0))

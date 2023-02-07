@@ -18,7 +18,7 @@ public class FoodGenerate : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(GenerateFood(40));
+        //StartCoroutine(GenerateFood(40));
     }
 
     void Update()

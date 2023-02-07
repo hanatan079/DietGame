@@ -153,6 +153,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 8128785899770706485, guid: 8b68d444ec4d64a9ab5f66d8ae889fbc, type: 3}
+  foodSprites:
+  - {fileID: 21300000, guid: 22cee7493b50f42799c6508770cab996, type: 3}
+  - {fileID: 21300000, guid: 9cd36ba094737465d967d0c42356ed4e, type: 3}
+  - {fileID: 21300000, guid: 6328737c609fb4201b6fc15b61099d30, type: 3}
+  - {fileID: 21300000, guid: 7a5a0e9b3945c4f2ba5dc1cc6487f8fd, type: 3}
+  - {fileID: 21300000, guid: 5cb0cdcb5b92c45c3b0a4278a0424334, type: 3}
+  - {fileID: 21300000, guid: ec02d49a8b4834946a88d37364247963, type: 3}
 --- !u!4 &360372487
 Transform:
   m_ObjectHideFlags: 0

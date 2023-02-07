@@ -10,7 +10,10 @@ public class FoodGenerate : MonoBehaviour
 
     //複数ボール格納用
     [SerializeField]
-    Spawn[] foodSpawns;
+    Sprite[] foodSprites;
+
+    //新しい食べ物格納
+    public GameObject food;
 
 
     void Start()
@@ -30,9 +33,10 @@ public class FoodGenerate : MonoBehaviour
         for(int i=0; i < count; i++)
         {
             Vector3 posY = new Vector3(Random.Range(-1.5f,1.5f),10f,-10f);
-            GameObject food = Instantiate(foodPrefab, posY, Quaternion.identity);
+            food = Instantiate(foodPrefab, posY, Quaternion.identity);
 
             yield return new WaitForSeconds(0.4f);
         }
     }
+
 }

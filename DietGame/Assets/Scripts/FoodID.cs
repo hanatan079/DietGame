@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallID : MonoBehaviour
+public class FoodID : MonoBehaviour
 {
-
-    //ボール識別
-    public int ID;
+    //食べ物識別用
+    public int id;
 }

@@ -47,5 +47,8 @@ public class FoodGenerate : MonoBehaviour
     {
         int foodID = Random.Range(0,foodSprites.Length);
         food.GetComponent<SpriteRenderer>().sprite = foodSprites[foodID];
+
+        //ID取得(foodID.cs)
+        food.GetComponent<FoodID>().id = foodID;
     }
 }

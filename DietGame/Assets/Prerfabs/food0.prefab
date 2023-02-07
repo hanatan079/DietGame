@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1941522483339629378}
   - component: {fileID: 1941522483339629389}
   - component: {fileID: 1941522483339629388}
+  - component: {fileID: -2222046584725530676}
   m_Layer: 0
   m_Name: food0
   m_TagString: Untagged
@@ -123,3 +124,16 @@ CircleCollider2D:
   m_Offset: {x: 0.06407821, y: -0.06407809}
   serializedVersion: 2
   m_Radius: 0.8473276
+--- !u!114 &-2222046584725530676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941522483339629391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60cb571f7a394ae39005b52b4479a75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0

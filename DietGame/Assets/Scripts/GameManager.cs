@@ -11,6 +11,11 @@ public class GameManager : MonoBehaviour
     //押している時引数
     [SerializeField]
     bool dragging;
+
+    //リスト
+    [SerializeField]
+    List<FoodID> removeFoods = new List<FoodID>();
+
     
 
 
@@ -24,7 +29,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
+        Mousedetection();
     }
 
     //マウスを検知
@@ -33,7 +38,7 @@ public class GameManager : MonoBehaviour
         //押した時
         if(Input.GetMouseButtonDown(0))
         {
-
+            StartDrag();
         }
         //押している時
         else if(dragging)
@@ -46,4 +51,24 @@ public class GameManager : MonoBehaviour
 
         }
     }
+
+    //押した時の処理内容
+    void StartDrag()
+    {
+        //Rayを飛ばす
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        //Rayがボールにヒットしたら
+        if(hit && hit.collider.GetComponent<FoodID>())
+        {
+            //removeFoods(リスト)へ追加
+            Debug.Log("tuika");
+            FoodID food = hit.collider.GetComponent<FoodID>();
+            removeFoods.Add(food);
+
+            dragging = true;
+        }
+    }
+
 }

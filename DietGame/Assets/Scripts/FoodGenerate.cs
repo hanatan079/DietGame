@@ -18,7 +18,7 @@ public class FoodGenerate : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(GenerateFood(20));
+        StartCoroutine(GenerateFood(40));
     }
 
     void Update()
@@ -38,7 +38,7 @@ public class FoodGenerate : MonoBehaviour
 
             RandomFoods();
             
-            yield return new WaitForSeconds(0.4f);
+            yield return new WaitForSeconds(0.2f);
         }
     }
 

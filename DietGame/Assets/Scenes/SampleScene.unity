@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737f0b14db03c4a37ac3c8d023d76444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodPrefab: {fileID: 8128785899770706485, guid: 8b68d444ec4d64a9ab5f66d8ae889fbc, type: 3}
+  foodPrefab: {fileID: 5000605546161656150, guid: b10992f69f8b945dcbc54594750410e2, type: 3}
   foodSprites:
   - {fileID: 21300000, guid: 22cee7493b50f42799c6508770cab996, type: 3}
   - {fileID: 21300000, guid: 9cd36ba094737465d967d0c42356ed4e, type: 3}

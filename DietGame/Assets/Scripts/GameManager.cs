@@ -71,4 +71,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //押している時の処理内容
+    void NowDragging()
+    {
+
+    }
+
+    //離した時の処理内容
+    void EndDragging()
+    {
+        
+    }
+
 }

@@ -74,13 +74,29 @@ public class GameManager : MonoBehaviour
     //押している時の処理内容
     void NowDragging()
     {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
+        if(hit && hit.collider.GetComponent<FoodID>())
+        {
+            FoodID food = hit.collider.GetComponent<FoodID>();
+        }
     }
 
     //離した時の処理内容
     void EndDragging()
     {
-        
+
+    }
+
+
+    //リストにない場合表示する
+    void NotList()
+    {
+        if(removeFoods.Contains(food) == false)
+        {
+            removeFoods.Add(food);
+        }
     }
 
 }

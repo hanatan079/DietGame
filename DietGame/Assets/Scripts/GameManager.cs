@@ -20,11 +20,11 @@ public class GameManager : MonoBehaviour
     FoodID nowDraggingFood;
 
 
-
     void Start()
     {
         //生成用コルーチン移動(40= count40回)
         StartCoroutine(foodGenerate.GenerateFood(40));
+
     }
 
     void Update()
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             StartDrag();
         }
-                //離した時
+        //離した時
         else if(Input.GetMouseButtonUp(0))
         {
             EndDragging();
@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
             {
                 //リストへ追加
                 NotList(food);
-
             }
         }
         }
@@ -111,11 +110,13 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(removeFoods[i].gameObject);
             }
+                    Debug.Log($"{OutFoods*100}");
+
 
             //消した数分新たに追加
             StartCoroutine(foodGenerate.GenerateFood(OutFoods));
         }
-        
+
         //リスト要素全消去
         removeFoods.Clear();
 
@@ -136,5 +137,4 @@ public class GameManager : MonoBehaviour
             removeFoods.Add(food);
         }
     }
-
 }

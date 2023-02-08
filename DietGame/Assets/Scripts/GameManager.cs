@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     List<FoodID> removeFoods = new List<FoodID>();
 
-    
+    //現在触っている食べ物か
+    FoodID nowDraggingFood;
 
 
 
@@ -84,6 +85,7 @@ public class GameManager : MonoBehaviour
         if(hit && hit.collider.GetComponent<FoodID>())
         {
             FoodID food = hit.collider.GetComponent<FoodID>();
+
 
             NotList(food);
                 Debug.Log("naka");

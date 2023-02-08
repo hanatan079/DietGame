@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         AddScore(0);
 
         //生成用コルーチン移動(40= count40回)
-        StartCoroutine(foodGenerate.GenerateFood(40));
+        StartCoroutine(foodGenerate.GenerateFood(60));
 
     }
 

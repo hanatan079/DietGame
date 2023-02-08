@@ -28,14 +28,17 @@ public class GameManager : MonoBehaviour
     Text scoreText;
 
 
+
+    void Awake()
+    {
+        //生成用コルーチン移動(40= count40回)
+        StartCoroutine(foodGenerate.GenerateFood(60));
+    }
+    
     void Start()
     {
         score = 0;
         AddScore(0);
-
-        //生成用コルーチン移動(40= count40回)
-        StartCoroutine(foodGenerate.GenerateFood(60));
-
     }
 
     void Update()
@@ -123,7 +126,6 @@ public class GameManager : MonoBehaviour
             }
                     //スコア加算
                    AddScore(OutFoods * 100);
-                    Debug.Log($"{OutFoods*100}");
 
 
             //消した数分新たに追加

@@ -33,7 +33,7 @@ public class FoodGenerate : MonoBehaviour
         for(int i=0; i < count; i++)
         {
             //生成する場所指定
-            Vector3 posY = new Vector3(Random.Range(-1.5f,1.5f),10f,-10f);
+            Vector3 posY = new Vector3(Random.Range(-2.5f,2.5f),10f,-10f);
             food = Instantiate(foodPrefab, posY, Quaternion.identity);
 
             //親オブジェクトを変更する
@@ -42,7 +42,7 @@ public class FoodGenerate : MonoBehaviour
 
             RandomFoods();
             
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 

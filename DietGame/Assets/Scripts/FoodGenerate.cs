@@ -16,6 +16,7 @@ public class FoodGenerate : MonoBehaviour
     public GameObject food;
 
 
+
     void Start()
     {
         //StartCoroutine(GenerateFood(40));

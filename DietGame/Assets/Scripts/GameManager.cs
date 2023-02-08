@@ -121,6 +121,8 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(removeFoods[i].gameObject);
             }
+                    //スコア加算
+                   AddScore(OutFoods * 100);
                     Debug.Log($"{OutFoods*100}");
 
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class GameManager : MonoBehaviour
 
     //現在触っている食べ物か
     FoodID nowDraggingFood;
+
+    //初期スコア
+    int score;
+
+    //スコアtext
+    [SerializeField]
+    Text scoreText;
 
 
     void Start()
@@ -136,5 +144,12 @@ public class GameManager : MonoBehaviour
         {
             removeFoods.Add(food);
         }
+    }
+
+    //スコア用
+    void AddScore(int scorecount)
+    {
+        score += scorecount;
+        scoreText.text = score.ToString();
     }
 }

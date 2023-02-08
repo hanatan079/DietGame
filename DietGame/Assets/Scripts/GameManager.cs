@@ -24,13 +24,14 @@ public class GameManager : MonoBehaviour
     {
         //生成用コルーチン移動(40= count40回)
         StartCoroutine(foodGenerate.GenerateFood(40));
-
     }
 
     void Update()
     {
         Mousedetection();
     }
+
+
 
     //マウスを検知
     void Mousedetection()
@@ -40,15 +41,16 @@ public class GameManager : MonoBehaviour
         {
             StartDrag();
         }
+                //離した時
+        else if(Input.GetMouseButtonUp(0))
+        {
+            EndDragging();
+        }
+
         //押している時
         else if(dragging)
         {
             NowDragging();
-        }
-        //離した時
-        else if(Input.GetMouseButtonUp(0))
-        {
-
         }
     }
 
@@ -84,12 +86,30 @@ public class GameManager : MonoBehaviour
             FoodID food = hit.collider.GetComponent<FoodID>();
 
             NotList(food);
+                Debug.Log("naka");
         }
     }
 
     //離した時の処理内容
     void EndDragging()
     {
+        int OutFoods = removeFoods.Count;
+
+        //3つ以上続けて触っていたら消去
+        if(OutFoods >= 3)
+        {
+            for(int i = 0; i < OutFoods; i++)
+            {
+                Destroy(removeFoods[i].gameObject);
+                        Debug.Log("aaa");
+
+            }
+        }
+        //リスト要素全消去
+        removeFoods.Clear();
+
+        //離したら効果きれる
+        dragging = false;
 
     }
 

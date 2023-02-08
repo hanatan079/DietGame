@@ -66,7 +66,6 @@ public class GameManager : MonoBehaviour
         if(hit && hit.collider.GetComponent<FoodID>())
         {
             //removeFoods(リスト)へ追加
-            Debug.Log("tuika");
             FoodID food = hit.collider.GetComponent<FoodID>();
 
             //removeFoods.Add(food);
@@ -94,7 +93,6 @@ public class GameManager : MonoBehaviour
             {
                 //リストへ追加
                 NotList(food);
-                Debug.Log("naka");
 
             }
         }
@@ -112,10 +110,12 @@ public class GameManager : MonoBehaviour
             for(int i = 0; i < OutFoods; i++)
             {
                 Destroy(removeFoods[i].gameObject);
-                        Debug.Log("aaa");
-
             }
+
+            //消した数分新たに追加
+            StartCoroutine(foodGenerate.GenerateFood(OutFoods));
         }
+        
         //リスト要素全消去
         removeFoods.Clear();
 

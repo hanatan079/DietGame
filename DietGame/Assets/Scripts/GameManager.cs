@@ -86,9 +86,18 @@ public class GameManager : MonoBehaviour
         {
             FoodID food = hit.collider.GetComponent<FoodID>();
 
-
-            NotList(food);
+        //触っている種類が同じで距離が近かったら
+        if(food.id == nowDraggingFood.id)
+        {
+            float shortDistance = Vector2.Distance(food.transform.position,nowDraggingFood.transform.position);
+            if(shortDistance < 2.0)
+            {
+                //リストへ追加
+                NotList(food);
                 Debug.Log("naka");
+
+            }
+        }
         }
     }
 
@@ -116,7 +125,7 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //リストにない場合追加する
+    //リストにない場合のみ追加する(既にある場合はスルー)
     void NotList(FoodID food)
     {
         //リストのボールは現在触っている食べ物か

@@ -116,9 +116,12 @@ public class GameManager : MonoBehaviour
     }
 
 
-    //リストにない場合表示する
+    //リストにない場合追加する
     void NotList(FoodID food)
     {
+        //リストのボールは現在触っている食べ物か
+        nowDraggingFood = food;
+
         if(removeFoods.Contains(food) == false)
         {
             removeFoods.Add(food);

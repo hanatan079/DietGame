@@ -35,21 +35,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int timerCount;
 
-    //スコア初期値
-    int score;
-
-    //スコアtext
-    [SerializeField]
-    Text scoreText;
-
-    //タイマー格納
-    [SerializeField]
-    Text timerText;
-
-    //タイマーカウント
-    int timerCount;
-
-
 
 
     void Awake()

@@ -23,4 +23,11 @@ public class TotalScore : MonoBehaviour
     {
         
     }
+
+    //シーン読み込み
+    public void RePlayButton()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
 }

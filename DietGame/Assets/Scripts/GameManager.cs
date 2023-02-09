@@ -156,6 +156,12 @@ public class GameManager : MonoBehaviour
             StartCoroutine(foodGenerate.GenerateFood(OutFoods));
         }
 
+        //元の大きさに戻すエフェクト
+        for(int i = 0; i < OutFoods; i++)
+        {
+            removeFoods[i].transform.localScale = Vector3.one;
+        }
+
         //リスト要素全消去
         removeFoods.Clear();
 

@@ -35,6 +35,19 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int timerCount;
 
+    //スコア初期値
+    int score;
+
+    //スコアtext
+    [SerializeField]
+    Text scoreText;
+
+    //タイマー格納
+    [SerializeField]
+    Text timerText;
+
+    //タイマーカウント
+    int timerCount;
 
 
 
@@ -50,12 +63,14 @@ public class GameManager : MonoBehaviour
         score = 0;
         AddScore(0);
 
-        timerCount = 30;
+        timerCount = 5;
+
         StartCoroutine(CountDown());
     }
 
     void Update()
     {
+
         Mousedetection();
     }
 

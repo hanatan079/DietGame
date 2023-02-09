@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int timerCount;
 
+    //スコア格納
+    int OutFoods;
+
 
 
     void Awake()
@@ -157,7 +160,6 @@ public class GameManager : MonoBehaviour
         dragging = false;
 
     }
-
 
 
     //リストにない場合のみ追加する(既にある場合はスルー)

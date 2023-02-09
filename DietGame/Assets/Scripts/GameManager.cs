@@ -49,6 +49,8 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         AddScore(0);
+
+        StartCoroutine(CountDown());
     }
 
     void Update()
@@ -168,5 +170,19 @@ public class GameManager : MonoBehaviour
     {
         score += scorecount;
         scoreText.text = score.ToString();
+    }
+
+    //タイマー
+    IEnumerator CountDown()
+    {
+        //0秒まで繰り返す
+        while(timerCount > 0)
+        {
+            yield return new WaitForSeconds(1);
+            timerCount --;
+
+            //時間表示
+            timerText.text = timerCount.ToString();
+        }
     }
 }

@@ -15,7 +15,7 @@ public class TotalScore : MonoBehaviour
     void Start()
     {
         score = GameManager.GetScore();
-        scoreText.text = string.Format("{0} カロリー", score);
+        scoreText.text = string.Format("{0}cal", score);
     }
 
     // Update is called once per frame

@@ -28,10 +28,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Text scoreText;
 
-    //
-    [SerializeField]
-    Text lastScore;
-
     //タイマー格納用
     [SerializeField]
     Text timerText;
@@ -39,13 +35,6 @@ public class GameManager : MonoBehaviour
     //タイマーカウント用
     [SerializeField]
     int timerCount;
-
-    //リザルド
-    [SerializeField]
-    GameObject scorePanel;
-
-    int OutFoods;
-
 
 
 
@@ -67,7 +56,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-
         Mousedetection();
     }
 
@@ -169,6 +157,7 @@ public class GameManager : MonoBehaviour
         dragging = false;
 
     }
+
 
 
     //リストにない場合のみ追加する(既にある場合はスルー)

@@ -189,5 +189,8 @@ public class GameManager : MonoBehaviour
             //時間表示
             timerText.text = timerCount.ToString();
         }
+            //パネルの表示
+            scorePanel.SetActive(true);
+
     }
 }

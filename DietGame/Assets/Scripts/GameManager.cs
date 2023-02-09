@@ -173,6 +173,9 @@ public class GameManager : MonoBehaviour
 
         if(removeFoods.Contains(food) == false)
         {
+            //触ったら大きくなるエフェクト
+            food.transform.localScale =Vector3.one * 1.3f;
+
             removeFoods.Add(food);
         }
     }

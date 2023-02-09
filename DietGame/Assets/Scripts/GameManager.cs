@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         AddScore(0);
 
+        timerCount = 30;
         StartCoroutine(CountDown());
     }
 

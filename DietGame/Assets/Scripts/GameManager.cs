@@ -35,6 +35,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     int timerCount;
 
+    //リザルド
+    [SerializeField]
+    GameObject scorePanel;
+
 
 
     void Awake()

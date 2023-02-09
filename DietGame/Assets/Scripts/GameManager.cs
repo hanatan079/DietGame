@@ -200,13 +200,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("TotalScore");
     }
 
-
-    //シーン読み込み
-    public void RePlayButton()
-    {
-        SceneManager.LoadScene("MainScene");
-    }
-
     //スコア加算
     void ScorePlus()
     {

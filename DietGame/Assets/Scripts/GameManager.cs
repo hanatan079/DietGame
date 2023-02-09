@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -52,7 +53,7 @@ public class GameManager : MonoBehaviour
         score = 0;
         AddScore(0);
 
-        timerCount = 5;
+        timerCount = 30;
 
         StartCoroutine(CountDown());
     }
@@ -118,14 +119,14 @@ public class GameManager : MonoBehaviour
 
         //触っている種類が同じで距離が近かったら
         if(food.id == nowDraggingFood.id)
-        {
-            float shortDistance = Vector2.Distance(food.transform.position,nowDraggingFood.transform.position);
-            if(shortDistance < 2.0)
             {
-                //リストへ追加
-                NotList(food);
+                float shortDistance = Vector2.Distance(food.transform.position,nowDraggingFood.transform.position);
+                if(shortDistance < 2.0)
+                {
+                    //リストへ追加
+                    NotList(food);
+                }
             }
-        }
         }
     }
 
@@ -143,7 +144,6 @@ public class GameManager : MonoBehaviour
             }
                     //スコア加算
                    AddScore(OutFoods * 100);
-
 
             //消した数分新たに追加
             StartCoroutine(foodGenerate.GenerateFood(OutFoods));
@@ -191,6 +191,11 @@ public class GameManager : MonoBehaviour
         }
             //パネルの表示
             scorePanel.SetActive(true);
+    }
 
+    //シーン読み込み
+    public void RePlayButton()
+    {
+        SceneManager.LoadScene("MainScene");
     }
 }

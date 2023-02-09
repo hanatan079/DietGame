@@ -27,16 +27,34 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     Text scoreText;
 
+    //タイマー格納用
+    [SerializeField]
+    Text timerText;
+
+    //タイマーカウント用
+    [SerializeField]
+    int timerCount;
+
+
+
+    void Awake()
+    {
+        //生成用コルーチン移動(40= count40回)
+        StartCoroutine(foodGenerate.GenerateFood(60));
+    }
 
     void Start()
     {
         //生成用コルーチン移動(40= count40回)
         StartCoroutine(foodGenerate.GenerateFood(40));
 
+        timerCount = 5;
+        StartCoroutine(CountDown());
     }
 
     void Update()
     {
+
         Mousedetection();
     }
 

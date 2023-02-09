@@ -22,11 +22,15 @@ public class GameManager : MonoBehaviour
     FoodID nowDraggingFood;
 
     //初期スコア
-    int score;
+    public static int score;
 
     //スコアtext
     [SerializeField]
     Text scoreText;
+
+    //
+    [SerializeField]
+    Text lastScore;
 
     //タイマー格納用
     [SerializeField]
@@ -39,6 +43,9 @@ public class GameManager : MonoBehaviour
     //リザルド
     [SerializeField]
     GameObject scorePanel;
+
+    int OutFoods;
+
 
 
 
@@ -133,7 +140,7 @@ public class GameManager : MonoBehaviour
     //離した時の処理内容
     void EndDragging()
     {
-        int OutFoods = removeFoods.Count;
+        OutFoods = removeFoods.Count;
 
         //3つ以上続けて触っていたら消去
         if(OutFoods >= 3)
@@ -142,8 +149,8 @@ public class GameManager : MonoBehaviour
             {
                 Destroy(removeFoods[i].gameObject);
             }
-                    //スコア加算
-                   AddScore(OutFoods * 100);
+                //スコア加算
+                ScorePlus();
 
             //消した数分新たに追加
             StartCoroutine(foodGenerate.GenerateFood(OutFoods));
@@ -190,12 +197,26 @@ public class GameManager : MonoBehaviour
             timerText.text = timerCount.ToString();
         }
             //パネルの表示
-            scorePanel.SetActive(true);
+        SceneManager.LoadScene("TotalScore");
     }
+
 
     //シーン読み込み
     public void RePlayButton()
     {
         SceneManager.LoadScene("MainScene");
     }
+
+    //スコア加算
+    void ScorePlus()
+    {
+        AddScore(OutFoods * 100);
+    }
+
+    //スコア共有
+    public static int GetScore()
+    {
+        return score;
+    }
+
 }

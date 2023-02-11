@@ -14,18 +14,20 @@ public class SoundManager : MonoBehaviour
     public AudioClip[] bgmClip;
 
 
-
-    // Start is called before the first frame update
-    void Start()
+    //singleをからにする
+    private void Awake()
     {
-        PlayBGM(BGM.Start);
+        if(single == null)
+        {
+            single = this;
+        }
+        else if(single != this)
+        {
+            Destroy(gameObject);
+        }
+        DontDestroyOnLoad(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     //何のBGMか
     public enum BGM

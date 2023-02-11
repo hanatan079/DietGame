@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public static SoundManager single;
 
     //BGM格納
-    public AudioSource audioSource;
+    public AudioSource bgmSource;
     //AudioClip格納
     public AudioClip[] bgmClip;
 
@@ -39,11 +39,27 @@ public class SoundManager : MonoBehaviour
         Main,
     }
 
-
     //再生(1.スタートリザルド　2.プレイ中)
     public void PlayBGM(BGM bgm)
     {
-        audioSource.clip = bgmClip[(int)bgm];
-        audioSource.Play();
+        bgmSource.clip = bgmClip[(int)bgm];
+        bgmSource.Play();
     }
+
+
+    //SE
+    public enum SE
+    {
+        Tap,
+        Destroy,
+    }
+
+    //再生(1.触った時2.消える時)
+    public void PlaySE(SE se)
+    {
+        SESource.PLayOneShot = SEClip[(int)se];
+    }
+
+
+
 }

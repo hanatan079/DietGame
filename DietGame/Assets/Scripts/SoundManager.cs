@@ -9,9 +9,12 @@ public class SoundManager : MonoBehaviour
 
     //BGM格納
     public AudioSource audioSource;
-
     //AudioClip格納
     public AudioClip[] bgmClip;
+
+    //SS格納
+    public AudioSource SESource;
+    public AudioClip[] SEClip;
 
 
     //singleをからにする

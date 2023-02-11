@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+
+        SoundManager.single.PlayBGM(SoundManager.BGM.Main);
+
         //生成用コルーチン移動(40= count40回)
         StartCoroutine(foodGenerate.GenerateFood(60));
     }
@@ -197,7 +200,7 @@ public class GameManager : MonoBehaviour
             timerText.text = timerCount.ToString();
         }
             //パネルの表示
-        SceneManager.LoadScene("TotalScore");
+        SceneManager.LoadScene("Total");
     }
 
     //スコア加算

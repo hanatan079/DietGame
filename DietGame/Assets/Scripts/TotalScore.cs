@@ -11,6 +11,11 @@ public class TotalScore : MonoBehaviour
     public Text scoreText;
     int score;
 
+    void Awake()
+    {
+        SoundManager.single.PlayBGM(SoundManager.BGM.Start);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +32,7 @@ public class TotalScore : MonoBehaviour
     //シーン読み込み
     public void RePlayButton()
     {
-        SceneManager.LoadScene("MainScene");
+        SceneManager.LoadScene("Main");
     }
 
 }

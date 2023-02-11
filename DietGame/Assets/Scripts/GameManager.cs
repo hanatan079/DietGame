@@ -98,6 +98,10 @@ public class GameManager : MonoBehaviour
         //Rayがボールにヒットしたら
         if(hit && hit.collider.GetComponent<FoodID>())
         {
+            //タップした時SE追加
+            SoundManager.single.PlaySE(SoundManager.SE.Tap);
+
+
             //removeFoods(リスト)へ追加
             FoodID food = hit.collider.GetComponent<FoodID>();
 
@@ -136,6 +140,8 @@ public class GameManager : MonoBehaviour
     {
         OutFoods = removeFoods.Count;
 
+            SoundManager.single.StopSE(SoundManager.SE.Tap);
+
         //3つ以上続けて触っていたら消去
         if(OutFoods >= 3)
         {
@@ -148,6 +154,10 @@ public class GameManager : MonoBehaviour
 
             //消した数分新たに追加
             StartCoroutine(foodGenerate.GenerateFood(OutFoods));
+
+            //SE呼び出し
+            SoundManager.single.PlaySE(SoundManager.SE.Destroy);
+
         }
 
         //元の大きさに戻すエフェクト

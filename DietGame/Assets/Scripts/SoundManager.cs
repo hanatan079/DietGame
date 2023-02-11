@@ -57,8 +57,16 @@ public class SoundManager : MonoBehaviour
     //再生(1.触った時2.消える時)
     public void PlaySE(SE se)
     {
-        SESource.PLayOneShot = SEClip[(int)se];
+        SESource.PlayOneShot(SEClip[(int)se]);
     }
+
+    //SE停止
+    public void StopSE(SE se)
+    {
+        SESource.PlayOneShot(SEClip[(int)se]);
+        SESource.Stop();
+    }
+
 
 
 

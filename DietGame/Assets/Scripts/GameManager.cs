@@ -43,6 +43,9 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+
+        SoundManager.single.PlayBGM(SoundManager.BGM.Main);
+
         //生成用コルーチン移動(40= count40回)
         StartCoroutine(foodGenerate.GenerateFood(60));
     }
@@ -95,6 +98,10 @@ public class GameManager : MonoBehaviour
         //Rayがボールにヒットしたら
         if(hit && hit.collider.GetComponent<FoodID>())
         {
+            //タップした時SE追加
+            SoundManager.single.PlaySE(SoundManager.SE.Tap);
+
+
             //removeFoods(リスト)へ追加
             FoodID food = hit.collider.GetComponent<FoodID>();
 
@@ -119,7 +126,7 @@ public class GameManager : MonoBehaviour
         if(food.id == nowDraggingFood.id)
             {
                 float shortDistance = Vector2.Distance(food.transform.position,nowDraggingFood.transform.position);
-                if(shortDistance < 2.0)
+                if(shortDistance < 1.5)
                 {
                     //リストへ追加
                     NotList(food);
@@ -133,6 +140,8 @@ public class GameManager : MonoBehaviour
     {
         OutFoods = removeFoods.Count;
 
+            SoundManager.single.StopSE(SoundManager.SE.Tap);
+
         //3つ以上続けて触っていたら消去
         if(OutFoods >= 3)
         {
@@ -145,6 +154,10 @@ public class GameManager : MonoBehaviour
 
             //消した数分新たに追加
             StartCoroutine(foodGenerate.GenerateFood(OutFoods));
+
+            //SE呼び出し
+            SoundManager.single.PlaySE(SoundManager.SE.Destroy);
+
         }
 
         //元の大きさに戻すエフェクト
@@ -197,7 +210,7 @@ public class GameManager : MonoBehaviour
             timerText.text = timerCount.ToString();
         }
             //パネルの表示
-        SceneManager.LoadScene("TotalScore");
+        SceneManager.LoadScene("Total");
     }
 
     //スコア加算

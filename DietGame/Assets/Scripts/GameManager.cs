@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         if(food.id == nowDraggingFood.id)
             {
                 float shortDistance = Vector2.Distance(food.transform.position,nowDraggingFood.transform.position);
-                if(shortDistance < 1.5)
+                if(shortDistance < 1)
                 {
                     //リストへ追加
                     NotList(food);
